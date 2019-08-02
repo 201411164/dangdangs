@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board.dao.BoardDAO">
+	<resultMap type="boardVO" id="boardVOMap">
+		<result column="csum" property="csum" javaType="String" jdbcType="CLOB"/>
+		<result column="ccause" property="ccause" javaType="String" jdbcType="CLOB"/>
+		<result column="ctreat" property="ctreat" javaType="String" jdbcType="CLOB"/>
+		<result column="ccare" property="ccare" javaType="String" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<select id="selectAll" resultMap="boardVOMap">
+		select * from d_board order by bno desc
+	</select>
+	
+	<select id="selectDnameBySyname" resultType="String" parameterType="String">
+		select dname from d_symptom where syname=#{syname}
+	</select>
+	<select id="selectDnameBySpcode" resultType="String" parameterType="String">
+		select dname from d_weaken where spcode=#{spcode}
+	</select>
+	<select id="selectDnameByAge" resultType="String" parameterType="int">
+		select dname from d_disease where dage=#{dage}
+	</select>
+</mapper>

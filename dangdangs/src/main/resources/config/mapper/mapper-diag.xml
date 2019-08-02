@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="diag.dao.DiagDAO">
+
+	<select id="selectDnameBySyname" resultType="String" parameterType="String">
+		select dname from d_symptom where syname=#{syname}
+	</select>
+	<select id="selectDnameBySpcode" resultType="String" parameterType="String">
+		select dname from d_weaken where spcode=#{spcode}
+	</select>
+	<select id="selectDnameByAge" resultType="String" parameterType="int">
+		select dname from d_disease where dage=#{dage}
+	</select>
+	
+</mapper>
