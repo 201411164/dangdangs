@@ -23,4 +23,5 @@
 	<select id="selectBnoByDname" resultMap="boardVOMap">
 		select bno, dname, bsum from d_board where dname=#{dname}
 	</select>
+	
 </mapper>

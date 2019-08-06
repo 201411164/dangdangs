@@ -8,5 +8,6 @@
 		<typeAlias type="com.dangdangs.diag.vo.DiagVO" alias="diagVO"/>
 		<typeAlias type="com.dangdangs.member.vo.MemberVO" alias="memberVO"/>
 		<typeAlias type="com.dangdangs.pet.vo.PetVO" alias="petVO"/>
+		<typeAlias type="com.dangdangs.comment.vo.CommentVO" alias="commentVO"/>
 	</typeAliases>
 </configuration>

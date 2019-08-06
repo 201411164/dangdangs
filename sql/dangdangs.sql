@@ -2,7 +2,7 @@ create table d_member(
     mno number(5) constraint d_member_mno_pk primary key,
     mid varchar2(20) constraint d_member_mid_uq unique,
     mpassword varchar2(20),
-    mnick varchar2(16) constraint d_member_mnick_uq unique,
+    mnick varchar2(30) constraint d_member_mnick_uq unique,
     mtype char(1) default 'U',
     mdate date default sysdate);
 create sequence d_member_seq nocache;
@@ -58,7 +58,7 @@ create sequence d_pet_seq nocache;
 
 create table d_comment(
     cno number(5) constraint d_comment_cno_pk primary key,
-    mnick varchar2(16),
+    mnick varchar2(30),
     bno number(5),
     ccontent CLOB,
     cdate date default sysdate,

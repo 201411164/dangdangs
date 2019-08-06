@@ -40,9 +40,7 @@ public class LoginController {
 	
 	@GetMapping("/logout")
 	public String logout(SessionStatus status) {
-		System.out.println("before: " + status.isComplete());
 		status.setComplete();
-		System.out.println("after: " + status.isComplete());
 		return "redirect:/";
 	}
 }
