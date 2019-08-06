@@ -4,23 +4,23 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="board.dao.BoardDAO">
 	<resultMap type="boardVO" id="boardVOMap">
-		<result column="csum" property="csum" javaType="String" jdbcType="CLOB"/>
-		<result column="ccause" property="ccause" javaType="String" jdbcType="CLOB"/>
-		<result column="ctreat" property="ctreat" javaType="String" jdbcType="CLOB"/>
-		<result column="ccare" property="ccare" javaType="String" jdbcType="CLOB"/>
+		<result column="bsum" property="bsum" javaType="String" jdbcType="CLOB"/>
+		<result column="bcause" property="bcause" javaType="String" jdbcType="CLOB"/>
+		<result column="btreat" property="btreat" javaType="String" jdbcType="CLOB"/>
+		<result column="bcare" property="bcare" javaType="String" jdbcType="CLOB"/>
 	</resultMap>
 	
 	<select id="selectAll" resultMap="boardVOMap">
 		select * from d_board order by bno desc
 	</select>
 	
-	<select id="selectDnameBySyname" resultType="String" parameterType="String">
-		select dname from d_symptom where syname=#{syname}
+	<!-- 글 번호에 따른 게시글 보여주기 -->
+	<select id="selectResult" resultMap="boardVOMap">
+		select * from d_board where bno=#{bno}
 	</select>
-	<select id="selectDnameBySpcode" resultType="String" parameterType="String">
-		select dname from d_weaken where spcode=#{spcode}
-	</select>
-	<select id="selectDnameByAge" resultType="String" parameterType="int">
-		select dname from d_disease where dage=#{dage}
+	
+	<!-- 병명에 따른 글 번호 링크를 jsp에 줄 때에 사용 -->
+	<select id="selectBnoByDname" resultMap="boardVOMap">
+		select bno, dname, bsum from d_board where dname=#{dname}
 	</select>
 </mapper>

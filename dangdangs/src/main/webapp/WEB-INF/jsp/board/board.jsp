@@ -7,6 +7,15 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/board.css">
+<style>
+a:link, a:visited {
+	color: #718ABE;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+</style>
 </head>
 <body>
 	<h2>게시판</h2>
@@ -19,8 +28,8 @@
 			</tr>
 			<c:forEach items="${ boardList }" var="board">
 			<tr>
-				<td><a href="board/${ bno }">${ board.bno }</a></td>
-				<td><a href="board/${ bno }">${ board.dname }</a></td>
+				<td><a href="${ pageContext.request.contextPath }/board/${ board.bno }">${ board.bno }</a></td>
+				<td><a href="${ pageContext.request.contextPath }/board/${ board.bno }">${ board.dname }</a></td>
 			</tr>
 			</c:forEach>
 		</table>

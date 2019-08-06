@@ -3,7 +3,8 @@ create table d_member(
     mid varchar2(20) constraint d_member_mid_uq unique,
     mpassword varchar2(20),
     mnick varchar2(16) constraint d_member_mnick_uq unique,
-    mtype char(1) default 'U', sysdate);
+    mtype char(1) default 'U',
+    mdate date default sysdate);
 create sequence d_member_seq nocache;
 
 create table d_disease(
@@ -49,6 +50,7 @@ create table d_pet(
     pno number(5) constraint d_pet_pno_pk primary key,
     mid varchar2(20),
     spcode varchar2(6),
+    pname varchar2(30) constraint d_pet_pname_nn not null,
     CONSTRAINT d_pet_mid_fk foreign key(mid) REFERENCES d_member(mid),
     CONSTRAINT d_pet_spcode_fk foreign key(spcode) REFERENCES d_species(spcode)
 );
@@ -110,7 +112,11 @@ Trichophyton mentagrophytes (백색종창균); 10%
 심각하지 않은 경우라면 동물 병원에서 처방하는 피부용 국소치료제 및 약용 샴푸로 호전될 수 있을 것이다. 이때, 장모종이라면 효과적인 약물/샴푸 도포를 위하여 털을 깎아야 할 수 있다. 
 심각한 경우라면 국소치료제나 약용 샴푸 외에도 항진균제가 처방될 수 있다. 완치 시까지 지속적으로 진균배양검사를 하여 확인을 하게 된다.', '강아지가 링웜을 진단 받았다면 다른 동물들과 격리해야 한다. 또한, 가족들이 그 강아지를 다룰 때도 일회용 장갑을 끼고, 만진 후에는 손을 닦고 옷가지도 빨아서 전염되지 않도록 해야한다.
 가장 중요한 것은 집을 소독하는 것이다. 바닥청소는 물론 옷가지, 소파, 침대, 카페트 등 세균이 있을만한 가구나 물건을 모두 살균효과가 강한 세척제로 빨아야 한다.', sysdate);
-insert into d_board values (d_board_seq.nextval, '감기', '사람이 감기에 걸리면 기침, 콧물, 재채기 등의 증세를 보인다.', '강아지 감기 증세의 원인은 우리가 생각하는 ‘스쳐 지나가는 감기 바이러스’가 아닐 수 있다.
+insert into d_board values (d_board_seq.nextval, '감기', '사람이 감기에 걸리면 기침, 콧물, 재채기 등의 증세를 보인다. 아래처럼 강아지 감기 증세도 유사하다.
+-콧물 혹은 코막힘
+-재채기
+-기침
+-눈물이 많아짐', '강아지 감기 증세의 원인은 우리가 생각하는 ‘스쳐 지나가는 감기 바이러스’가 아닐 수 있다.
 사람이 걸리는 감기는 50% 이상이 리노바이러스라는 특정 감기 바이러스에 의한 것이라고 한다.
 반면, 강아지의 경우 아래와 같이 전염성이 높은 바이러스에 의한 것일 수 있으므로 더 유의해야 한다.
 

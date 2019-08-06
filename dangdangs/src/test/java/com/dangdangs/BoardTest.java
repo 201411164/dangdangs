@@ -16,13 +16,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.dangdangs.board.dao.BoardDAO;
+import com.dangdangs.board.service.BoardService;
+import com.dangdangs.board.vo.BoardVO;
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:config/**/*.xml")
 public class BoardTest {
 
 	@Autowired
 	private SqlSessionTemplate ss;
+	@Autowired
+	private BoardDAO dao;
+	@Autowired
+	private BoardService service;
 	
+	@Ignore
 	@Test
 	public void 매퍼테스트() throws Exception{
 		System.out.println(ss.selectList("board.dao.BoardDAO.selectAll"));
@@ -79,5 +88,25 @@ public class BoardTest {
 		});
         
 		System.out.println(orderedList);
+	}
+	
+	@Test
+	public void 결과테스트() {
+//		BoardVO vo = ss.selectOne("board.dao.BoardDAO.selectResult", 1);
+//		System.out.println(vo);
+//		System.out.println(service.selectResultBoard(1));
+		List<String> list = new ArrayList<>();
+		list.add("감기, 백혈병");
+		list.add("종양");
+		list.add("탈구");
+		
+		if(list.get(0).contains(", ")) {
+			String[] tokens = list.get(0).split(", ");
+			for (String e: tokens) {
+				System.out.println(e);
+			}
+		} else {
+			System.out.println("없음");
+		}
 	}
 }

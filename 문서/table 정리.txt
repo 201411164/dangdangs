@@ -4,6 +4,7 @@
 - 패스워드		- mpassword	varchar2(20)
 - 닉네임 uq		- mnick		varchar2(16)
 - 유저타입		- mtype		char(1)
+- 가입날짜		- mdate		date
 
 질병			- d_disease
 - 질병명 pk		- dname 		varchar2(40)
@@ -26,13 +27,17 @@
 질병 내용(게시글)		- d_board
 - 번호 pk			- bno		number(5)
 - 질병명 fk		- dname		varchar2(40)
-- 내용...			- bsum~어쩌구
+- 요약			- bsum		CLOB
+- 원인			- bcause		CLOB
+- 치료법			- btreat		CLOB
+- 관리법			- bcare		CLOB
 - 작성날짜		- bdate		date
 
 회원 개 테이블		- d_pet
 - 번호 pk			- pno		number(5)
 - 아이디 fk		- mid		varchar2(20)
 - 개 코드이름 fk		- spcode		varchar2(6)
+- 개 불리는 이름		- pname		varchar2(30)
 
 댓글 테이블		- d_comment
 - 번호 pk			- cno		number(5)
