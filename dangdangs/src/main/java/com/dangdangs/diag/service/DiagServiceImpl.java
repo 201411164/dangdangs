@@ -46,6 +46,9 @@ public class DiagServiceImpl implements DiagService {
 		tempList = diagDAO.selectDnameByDAge(diagVO.getDage());
 		map = makeMap(map, tempList, 0.4);
 		
+		// 1점 미만의 가중치를 가지면 후보군에서 제외
+		
+		
 		// Comparator 클래스 재정의를 통해, 가중치 따라 내림차순 정렬
 		List<Map.Entry<String, Double>> sortedList = new LinkedList<>(map.entrySet());
 		
@@ -61,7 +64,10 @@ public class DiagServiceImpl implements DiagService {
         Map<String, Double> sortedMap = new LinkedHashMap<>();
         for(Iterator<Map.Entry<String, Double>> iter = sortedList.iterator(); iter.hasNext();){
             Map.Entry<String, Double> entry = iter.next();
-            sortedMap.put(entry.getKey(), entry.getValue());
+            // 가중치가 1점 미만인 질병군 제거 
+            if (entry.getValue() >= 1) {
+            	sortedMap.put(entry.getKey(), entry.getValue());
+            }
         }
         System.out.println("점수표: " + sortedMap);
         int tieCount = countTie(sortedMap);
@@ -90,7 +96,6 @@ public class DiagServiceImpl implements DiagService {
 		}
 		return voList;
 	}
-
 
 
 	// 가중치를 계산하여 맵 형태로 반환
