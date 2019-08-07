@@ -14,6 +14,10 @@
 	
 	<!-- 댓글조회 -->
 	<select id="selectByBno" parameterType="int" resultMap="commentVOMap">
-		select * from d_comment where bno=#{bno} order by cdate desc
+		select * from d_comment where bno=#{bno} and ctype='V' order by cdate desc
 	</select>
+	<!-- 댓글삭제 -->
+	<update id="updateCtypeByCno" parameterType="int">
+		update d_comment set ctype='I' where cno=#{cno}
+	</update>
 </mapper>

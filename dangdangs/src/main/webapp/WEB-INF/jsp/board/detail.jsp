@@ -27,6 +27,24 @@ table.list tr:nth-child(odd) {
    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
    crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script>
+	function deleteComment(no){
+		if(confirm("댓글을 삭제하시겠습니까?")){
+			$.ajax({
+				type : "PUT",
+				url : "${ pageContext.request.contextPath }/comment/"+no,
+				success : function(data){
+					if (data == 1){
+						location.href="${ pageContext.request.contextPath }/board/${ vo.bno }"
+					} else {
+						alert("삭제에 실패했습니다.");
+					}
+				}
+			});
+		}
+	}
+</script>
 </head>
 <body>
    <h2>상세보기</h2>
@@ -67,6 +85,7 @@ table.list tr:nth-child(odd) {
                <th style="width: 5%">내용</th>
                <td>${ comment.ccontent }</td>
                <td style="width: 7%">${ comment.cdate }</td>
+               <td style="width: 7%"><input type="button" value="삭제" onclick="deleteComment(${ comment.cno })"></td>
             </tr>
             </c:forEach>
         </table>

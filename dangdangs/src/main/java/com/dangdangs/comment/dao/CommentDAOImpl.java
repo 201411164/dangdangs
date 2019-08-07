@@ -24,4 +24,9 @@ public class CommentDAOImpl implements CommentDAO {
 		return ss.selectList("comment.dao.CommentDAO.selectByBno", bno);
 	}
 
+	@Override
+	public int updateCtypeByCno(int cno) {
+		return ss.update("comment.dao.CommentDAO.updateCtypeByCno", cno);
+	}
+
 }

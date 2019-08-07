@@ -31,6 +31,7 @@ public class DiagController {
 		System.out.println("가장 유력한 질병: " + dnameList.get(0));
 		model.addAttribute("dnameList", dnameList);
 		model.addAttribute("voList", voList);
+		model.addAttribute("replaceChar", "\n");
 		return "diag/result";
 	}
 }

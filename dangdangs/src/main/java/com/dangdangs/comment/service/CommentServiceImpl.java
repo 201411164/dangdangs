@@ -24,4 +24,9 @@ public class CommentServiceImpl implements CommentService {
 		return commentDAO.selectByBno(bno);
 	}
 
+	@Override
+	public int updateCtypeByCnoComment(int cno) {
+		return commentDAO.updateCtypeByCno(cno);
+	}
+
 }

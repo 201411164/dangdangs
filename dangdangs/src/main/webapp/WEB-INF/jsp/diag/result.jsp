@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<% pageContext.setAttribute("replaceChar", "\n");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,7 +73,7 @@ body > div > span:hover{
 		<hr>
 		<c:forEach items="${ voList }" var="vo">
 			<div class="bsum">
-				<span>${ vo.bsum }</span>
+				<span>${fn:replace(vo.bsum, replaceChar, "<br/>") }</span>
 				<br><br><br>
 				<a href="${ pageContext.request.contextPath }/board/${ vo.bno }">자세히 보기</a>
 			</div>
