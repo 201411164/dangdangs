@@ -16,7 +16,7 @@
 - 질병증상		- syname		varchar2(30)
 
 견종 테이블		- d_species
-- 개 진짜이름 uq		- spname		varchar2(20)
+- 개 진짜이름 uq		- spname		varchar2(50)
 - 개 코드이름 pk		- spcode		varchar2(6)
 
 취약 견종 테이블		- d_weaken

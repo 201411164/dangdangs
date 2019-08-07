@@ -71,20 +71,27 @@ table.list tr:nth-child(odd) {
             </c:forEach>
         </table>
     	</c:if>
-      <form method="post" action="${ pageContext.request.contextPath }/comment/${ vo.bno }">
-         <%-- 댓글 달기 폼 cno, mnick, bno, ccontent, cdate, ctype --%>
-         <input type="hidden" name="mnick" value="${ loginVO.mnick }">
-         <input type="hidden" name="bno" value="${ vo.bno }">
-         <table style="width: 80% ">
-            <tr>
-               <th>작성자</th>
-               <td>${ loginVO.mnick }</td>
-               <th>내용</th>
-               <td><textarea name="ccontent" rows="3" cols="150"></textarea>
-         <button type="submit" class="btn btn-outline-dark" >댓글작성</button></td>
-            </tr>
-         </table>
-      </form>
+    	<c:choose>
+    	<c:when test="${ not empty loginVO }">
+      	<form method="post" action="${ pageContext.request.contextPath }/comment/${ vo.bno }">
+	         <%-- 댓글 달기 폼 cno, mnick, bno, ccontent, cdate, ctype --%>
+	         <input type="hidden" name="mnick" value="${ loginVO.mnick }">
+	         <input type="hidden" name="bno" value="${ vo.bno }">
+	         <table style="width: 80% ">
+	            <tr>
+	               <th>작성자</th>
+	               <td>${ loginVO.mnick }</td>
+	               <th>내용</th>
+	               <td><textarea name="ccontent" rows="3" cols="150"></textarea>
+	         		   <button type="submit" class="btn btn-outline-dark" >댓글작성</button></td>
+	            </tr>
+	         </table>
+	    </form>
+	    </c:when>
+	    <c:otherwise>
+	    	<div style="width:80%">로그인 후 댓글을 달 수 있습니다.</div>
+	    </c:otherwise>
+	    </c:choose>
    </div>
 </body>
 </html>
