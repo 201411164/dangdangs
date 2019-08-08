@@ -7,6 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="resources/css/board.css">
+
+<link rel="stylesheet" type="text/css"
+	href="${ pageContext.request.contextPath }/resources/css/layout.css">
+<link rel="stylesheet" type="text/css"
+	href="${ pageContext.request.contextPath }/resources/css/style.css">
+
 <style>
 a:link, a:visited {
 	color: #718ABE;
@@ -18,8 +24,10 @@ a:hover {
 </style>
 </head>
 <body>
-	<h2>게시판</h2>
-	<hr>
+	<header>
+		<jsp:include page="/WEB-INF/jsp/include/topMenu.jsp" />
+	</header>
+	
 	<div align="center">
 		<table style="border: 1px solid;">
 			<tr>

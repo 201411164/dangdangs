@@ -6,6 +6,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+
+<link rel="stylesheet" type="text/css"
+	href="${ pageContext.request.contextPath }/resources/css/layout.css">
+<link rel="stylesheet" type="text/css"
+	href="${ pageContext.request.contextPath }/resources/css/style.css">
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script>
 	var isChecked = {
@@ -50,14 +57,22 @@
 	}
 </script>
 </head>
+
+
+
+
 <body>
-	<h2>회원가입</h2><br>
-	<div align="center">
+	<header>
+		<jsp:include page="/WEB-INF/jsp/include/topMenu.jsp" />
+	</header>
+
+	<div class="backgroundForm"
+		style="background-image: url('${ pageContext.request.contextPath }/resources/img/backgrounds/loginbg.jpg');">
 		<form:form method="post" commandName="memberVO">
 			<table>
 				<tr>
 					<th width="20%">아이디</th>
-					<td><form:input id="id" path="mid" size="30"/></td>
+					<td><form:input id="id" path="mid" size="30" /></td>
 					<td><input type="button" value="중복확인" onclick="validCheck(0)"></td>
 				</tr>
 				<tr>
@@ -66,7 +81,7 @@
 				</tr>
 				<tr>
 					<th width="20%">비밀번호</th>
-					<td><form:input type="password" path="mpassword" size="30"/></td>
+					<td><form:input type="password" path="mpassword" size="30" /></td>
 				</tr>
 				<tr>
 					<td></td>
@@ -74,15 +89,17 @@
 				</tr>
 				<tr>
 					<th width="20%">별명</th>
-					<td><form:input id="nick" path="mnick" size="30"/></td>
+					<td><form:input id="nick" path="mnick" size="30" /></td>
 					<td><input type="button" value="중복확인" onclick="validCheck(1)"></td>
 				</tr>
 				<tr>
 					<td></td>
-					<td><form:errors path="mnick" class="error" /><label id="nickchk">&nbsp;</label></td>
+					<td><form:errors path="mnick" class="error" /><label
+						id="nickchk">&nbsp;</label></td>
 				</tr>
 			</table>
-			<br><button id="submit" type="submit" disabled="disabled">가입하기</button>
+			<br>
+			<button id="submit" type="submit" disabled="disabled">가입하기</button>
 		</form:form>
 	</div>
 </body>

@@ -15,12 +15,12 @@ h5{
 h6{
 	font-size:0.9rem;font-weight:400;
 }	
-
+	
 }
 
 @media (min-width: 768px) and (max-width: 959px) {
 	
-	.navbar-expand-md .navbar-nav .nav-link { padding-left: 0.3rem; padding-right: 0.3rem; font-size:1.6rem; letter-spacing: 0}
+	.navbar-expand-md .navbar-nav .nav-link { padding-left: 0.3rem; padding-right: 0.3rem; font-size:1.3rem; letter-spacing: 0}
 	.top-content .carousel-caption { position: absolute; top: 42%; left: 50%; transform : translate(-50%,-50%); }
 h4{
 	font-size:2.0rem;font-weight:300;
@@ -38,11 +38,8 @@ h6{
 } 
 
 @media (max-width: 767px) {
-	.navbar-brand{display:none;} 
-	.navbar.navbar-no-bg { background: #444; }
-	.navbar-dark .navbar-toggler { border-color: #444; }
-	.navbar-dark .navbar-toggler:focus { background: #333; outline: 0; }
-	.navbar-expand-md .navbar-nav .nav-lin	k { padding-top: 0.1rem; padding-bottom: 0.1rem; font-size:1.3rem }
+	
+	.navbar-expand-md .navbar-nav .nav-lin	k { padding-top: 0.1rem; padding-bottom: 0.1rem; font-size:0.6rem }
 	top-content .carousel-caption { position: absolute; top: 25%; left: 50%; transform : translate(-50%,-50%); }
 h4{
 	font-size:1.4rem;font-weight:300;
@@ -57,11 +54,15 @@ h6{
 }
 
 @media (max-width: 575px) {
-	
+	.navbar-brand{display:none;} 
+	.navbar.navbar-no-bg { background: #444; }
+	.navbar-dark .navbar-toggler { border-color: #444; }
+	.navbar-dark .navbar-toggler:focus { background: #333; outline: 0; }
 	.top-content .carousel-caption { bottom: 0; }
 	.top-content h1 { font-size: 18px; line-height: 30px; }
 	.top-content .description { display: none; }
-	.navbar-brand{display:none;} 
+	
+	
 h4{
 	font-size:1.1rem;font-weight:300;
 }
