@@ -85,7 +85,9 @@ table.list tr:nth-child(odd) {
                <th style="width: 5%">내용</th>
                <td>${ comment.ccontent }</td>
                <td style="width: 7%">${ comment.cdate }</td>
+               <c:if test="${ loginVO.mnick == comment.mnick }">
                <td style="width: 7%"><input type="button" value="삭제" onclick="deleteComment(${ comment.cno })"></td>
+               </c:if>
             </tr>
             </c:forEach>
         </table>
