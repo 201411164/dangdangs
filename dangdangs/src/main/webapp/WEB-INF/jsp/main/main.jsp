@@ -62,122 +62,125 @@
 
 
 <body>
+
+	<!-- bootstrap container-fluid 기본 padding값이 15px이라서 여백을 없애기 위해 스타일 설정 -->
+	<div class="container-fluid" style="padding-left: 0px; padding-right: 0px;">
 	<header>
 		<jsp:include page="/WEB-INF/jsp/include/topMenu.jsp" />
 	</header>
 
 
+	
+		<!-- Top content 메롱 -->
+		<div class="top-content">
+			<div class="row no-gutters">
+				<div class="col">
+					<div id="carousel-example" class="carousel slide"
+						data-ride="carousel">
 
-	<!-- Top content 메롱 -->
-	<div class="top-content">
-		<div class="row no-gutters">
-			<div class="col">
-				<div id="carousel-example" class="carousel slide"
-					data-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img
+									src="${ pageContext.request.contextPath }/resources/img/backgrounds/1.jpg"
+									alt="img1">
+								<div class="carousel-caption">
+									<h4>
+										소중한 우리 아이<br>
+									</h4>
+									<h5>더 이상 아프지 않게</h5>
+									<h6 class="c3">
+										이제 우리 댕댕이가 어떤 병에 걸렸는지, <br>어떻게 치료해야 할 지 알아보세요.
 
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<img
-								src="${ pageContext.request.contextPath }/resources/img/backgrounds/1.jpg"
-								alt="img1">
-							<div class="carousel-caption">
-								<h4>
-									소중한 우리 아이<br>
-								</h4>
-								<h5>더 이상 아프지 않게             </h5>
-								<h6 class="c3">
-									이제 우리 댕댕이가 어떤 병에 걸렸는지,   <br>어떻게 치료해야 할 지 알아보세요.
+									</h6>
+									<div class="description wow fadeInUp">
+										<button type="button" class="btn btn-outline-light"
+											onclick="location.href='${ pageContext.request.contextPath }/diag'">진단하러
+											가기</button>
+										<ol class="carousel-indicators"
+											style="position: absolute; top: 105%; left: 35%; transform: translate(-50%, -50%);">
 
-								</h6>
-								<div class="description wow fadeInUp">
-									<button type="button" class="btn btn-outline-light"
-										onclick="location.href='${ pageContext.request.contextPath }/diag'">진단하러
-										가기</button>
-									<ol class="carousel-indicators"
-										style="position: absolute; top: 105%; left: 35%; transform: translate(-50%, -50%);">
+											<li data-target="#carousel-example" data-slide-to="0"
+												class="active"></li>
+											<li data-target="#carousel-example" data-slide-to="1"></li>
+											<li data-target="#carousel-example" data-slide-to="2"></li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="${ pageContext.request.contextPath }/resources/img/backgrounds/2.jpg"
+									alt="img2">
+								<div class="carousel-caption">
 
-										<li data-target="#carousel-example" data-slide-to="0"
-											class="active"></li>
-										<li data-target="#carousel-example" data-slide-to="1"></li>
-										<li data-target="#carousel-example" data-slide-to="2"></li>
-									</ol>
+									<h4 class="c1">
+										내 옆의 단짝친구<br>
+									</h4>
+									<h5 class="c2">요즘 끼니를 거른다면</h5>
+									<h6 class="c3">
+										이제 우리 댕댕이가 어떤 병에 걸렸는지, <br>어떻게 치료해야 할 지 알아보세요.
+
+									</h6>
+									<div class="description wow fadeInUp">
+										<button type="button" class="btn btn-outline-light"
+											onclick="location.href='${ pageContext.request.contextPath }/diag'">진단하러
+											가기</button>
+										<ol class="carousel-indicators"
+											style="position: absolute; top: 105%; left: 35%; transform: translate(-50%, -50%);">
+
+											<li data-target="#carousel-example" data-slide-to="0"></li>
+											<li data-target="#carousel-example" data-slide-to="1"
+												class="active"></li>
+											<li data-target="#carousel-example" data-slide-to="2"></li>
+										</ol>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<img
+									src="${ pageContext.request.contextPath }/resources/img/backgrounds/3.jpg"
+									alt="img3">
+								<div class="carousel-caption">
+
+									<h4 class="c1">
+										활발하던 댕댕이<br>
+									</h4>
+									<h5 class="c2">힘 없어 보인다면</h5>
+									<h6 class="c3">
+										이제 우리 댕댕이가 어떤 병에 걸렸는지, <br>어떻게 치료해야 할 지 알아보세요.
+
+									</h6>
+									<div class="description wow fadeInUp">
+										<button type="button" class="btn btn-outline-light"
+											onclick="location.href='${ pageContext.request.contextPath }/diag'">진단하러
+											가기</button>
+										<ol class="carousel-indicators"
+											style="position: absolute; top: 105%; left: 35%; transform: translate(-50%, -50%);">
+
+											<li data-target="#carousel-example" data-slide-to="0"></li>
+											<li data-target="#carousel-example" data-slide-to="1"></li>
+											<li data-target="#carousel-example" data-slide-to="2"
+												class="active"></li>
+										</ol>
+
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="carousel-item">
-							<img
-								src="${ pageContext.request.contextPath }/resources/img/backgrounds/2.jpg"
-								alt="img2">
-							<div class="carousel-caption">
-
-								<h4 class="c1">
-									내 옆의 단짝친구<br>
-								</h4>
-								<h5 class="c2">요즘 끼니를 거른다면             </h5>
-								<h6 class="c3">
-									이제 우리 댕댕이가 어떤 병에 걸렸는지,   <br>어떻게 치료해야 할 지 알아보세요.
-
-								</h6>
-								<div class="description wow fadeInUp">
-									<button type="button" class="btn btn-outline-light"
-										onclick="location.href='${ pageContext.request.contextPath }/diag'">진단하러
-										가기</button>
-									<ol class="carousel-indicators"
-										style="position: absolute; top: 105%; left: 35%; transform: translate(-50%, -50%);">
-
-										<li data-target="#carousel-example" data-slide-to="0"></li>
-										<li data-target="#carousel-example" data-slide-to="1"
-											class="active"></li>
-										<li data-target="#carousel-example" data-slide-to="2"></li>
-									</ol>
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item">
-							<img
-								src="${ pageContext.request.contextPath }/resources/img/backgrounds/3.jpg"
-								alt="img3">
-							<div class="carousel-caption">
-
-								<h4 class="c1">
-									활발하던 댕댕이<br>
-								</h4>
-								<h5 class="c2">힘 없어 보인다면           </h5>
-								<h6 class="c3">
-									이제 우리 댕댕이가 어떤 병에 걸렸는지,   <br>어떻게 치료해야 할 지 알아보세요.
- 
-								</h6>
-								<div class="description wow fadeInUp">
-									<button type="button" class="btn btn-outline-light"
-										onclick="location.href='${ pageContext.request.contextPath }/diag'">진단하러
-										가기</button>
-									<ol class="carousel-indicators"
-										style="position: absolute; top: 105%; left: 35%; transform: translate(-50%, -50%);">
-
-										<li data-target="#carousel-example" data-slide-to="0"></li>
-										<li data-target="#carousel-example" data-slide-to="1"></li>
-										<li data-target="#carousel-example" data-slide-to="2"
-											class="active"></li>
-									</ol>
-
-								</div>
-							</div>
-						</div>
+						<a class="carousel-control-prev" href="#carousel-example"
+							role="button" data-slide="prev"> <span
+							class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+							class="sr-only">Previous</span>
+						</a> <a class="carousel-control-next" href="#carousel-example"
+							role="button" data-slide="next"> <span
+							class="carousel-control-next-icon" aria-hidden="true"></span> <span
+							class="sr-only">Next</span>
+						</a>
 					</div>
-					<a class="carousel-control-prev" href="#carousel-example"
-						role="button" data-slide="prev"> <span
-						class="carousel-control-prev-icon" aria-hidden="true"></span> <span
-						class="sr-only">Previous</span>
-					</a> <a class="carousel-control-next" href="#carousel-example"
-						role="button" data-slide="next"> <span
-						class="carousel-control-next-icon" aria-hidden="true"></span> <span
-						class="sr-only">Next</span>
-					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 
 

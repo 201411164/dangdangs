@@ -23,7 +23,7 @@
 <div style="height:5rem; ">
       <nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg"  >
       
-         <div class="container" >
+         <div class="container-fluid" >
             <a class="navbar-brand" href="${ pageContext.request.contextPath }/">
             	
             </a>

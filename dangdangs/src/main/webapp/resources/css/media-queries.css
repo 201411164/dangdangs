@@ -3,7 +3,10 @@ h4,h5,h6{white-space: nowrap;}
 원래 p태그였으나 p태그는 반응형으로 글자 크기를 바꿔줄 수가 없어서 h태그로 교체하였음(원인 찾는데 시간 드럽게 오래걸림 ㅠ)
 */
 
-
+@media (min-width: 1040px) and (max-width: 1400px) 
+{
+	.navbar-expand-md .navbar-nav .nav-link {	 padding-left: 0.4rem; padding-right: 0.4rem; font-size:1.9rem ; letter-spacing: 0}
+}
 
 
 
